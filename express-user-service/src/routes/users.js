@@ -32,7 +32,7 @@ router.put('/:id', async (req, res) => {
             data: { name, email }
         });
 
-        await fetch(`${HISTORY_SERVICE_URL}/actions`, {
+        await fetch(`${process.env.HISTORY_SERVICE_URL}/actions`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userId: user.id, action: 'update' })
